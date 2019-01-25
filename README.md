@@ -1,3 +1,74 @@
+## Config
+
+https://docs.ghost.org/concepts/config/
+
+```
+"mail": {
+    "transport": "SMTP",
+    "options": {
+        "service": "Mailgun",
+        "auth": {
+            "user": "postmaster@example.mailgun.org",
+            "pass": "1234567890"
+        }
+    }
+}
+```
+
+### Amazon SES
+
+```
+"mail": {
+    "transport": "SMTP",
+    "options": {
+        "host": "YOUR-SES-SERVER-NAME",
+        "port": 465,
+        "service": "SES",
+        "auth": {
+            "user": "YOUR-SES-ACCESS-KEY-ID",
+            "pass": "YOUR-SES-SECRET-ACCESS-KEY"
+        }
+    }
+}
+
+```
+
+From address
+By default the 'from' address for mail sent from Ghost is set to the title of your publication, for example <ghost@your-publication.com>. To override this to something different, use:
+
+
+```
+"mail": {
+    "from": "myemail@address.com",
+}
+```
+
+A custom name can also be provided:
+
+
+```
+"mail": {
+    "from": "'Custom Name' <myemail@address.com>",
+}
+```
+
+Admin URL
+Admin can be used to specify a different protocol for your admin panel or a different hostname (domain name). It can't affect the path at which the admin panel is served (this is always /ghost/).
+
+
+```
+"admin": {
+  "url": "http://example.com"
+}
+```
+
+
+
+https://github.com/TryGhost/Ghost/issues/5675
+
+
+
+
 
 
 ## Adjusting Image Sizes In Ghost
